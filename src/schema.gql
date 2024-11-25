@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Todo {
+  todoId: Int!
+  description: String!
+  done: Boolean!
+}
+
 type Query {
   """Hola mundo es lo que retorna"""
   hello: String!
@@ -10,4 +16,5 @@ type Query {
 
   """From one to argument TO (default 6)"""
   randomFromOneTo(to: Int): Int!
+  todos: [Todo!]!
 }
