@@ -19,3 +19,11 @@ type Query {
   todos: [Todo!]!
   todo(todoId: Int!): Todo!
 }
+
+type Mutation {
+  save_todo(request: CreateTodoInput!): Todo!
+}
+
+input CreateTodoInput {
+  description: String!
+}
