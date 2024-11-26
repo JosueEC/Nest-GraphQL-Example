@@ -1,3 +1,4 @@
+import { CreateTodoInput } from './dto/inputs/create-todo.input';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Todo } from './entity/todo.entity';
 
@@ -33,5 +34,19 @@ export class TodoService {
     }
 
     return todo;
+  }
+
+  save(request: CreateTodoInput): Todo {
+    const { description } = request;
+
+    const newTodo: Todo = {
+      todoId: this.todos.length + 1,
+      description,
+      done: false,
+    };
+
+    this.todos.push(newTodo);
+
+    return this.findOne(newTodo.todoId);
   }
 }
