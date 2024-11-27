@@ -21,9 +21,17 @@ type Query {
 }
 
 type Mutation {
-  save_todo(request: CreateTodoInput!): Todo!
+  saveTodo(request: CreateTodoInput!): Todo!
+  updateTodo(request: UpdateTodoInput!): Todo!
+  removeTodo(todoId: Int!): String!
 }
 
 input CreateTodoInput {
   description: String!
+}
+
+input UpdateTodoInput {
+  todoId: Int!
+  description: String
+  done: Boolean
 }

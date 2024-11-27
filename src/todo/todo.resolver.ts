@@ -56,4 +56,11 @@ export class TodoResolver {
   update(@Args('request') request: UpdateTodoInput): Todo {
     return this.todosService.update(request);
   }
+
+  @Mutation(() => String, {
+    name: 'removeTodo',
+  })
+  remove(@Args('todoId', { type: () => Int }) todoId: number): string {
+    return this.todosService.remove(todoId);
+  }
 }
