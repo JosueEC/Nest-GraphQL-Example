@@ -5,7 +5,7 @@ import { Field, InputType } from '@nestjs/graphql';
 export class CreateTodoInput {
   @Field(() => String)
   @IsString()
-  @MaxLength(155)
+  @MaxLength(50)
   @IsNotEmpty()
   description: string;
 }
