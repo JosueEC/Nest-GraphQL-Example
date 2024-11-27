@@ -63,4 +63,12 @@ export class TodoService {
 
     return todoToUpdate;
   }
+
+  remove(todoId: number): string {
+    this.findOne(todoId);
+
+    this.todos = this.todos.filter((todo) => todo.todoId !== todoId);
+
+    return 'Todo removed successfully';
+  }
 }
