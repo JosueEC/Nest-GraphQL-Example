@@ -64,4 +64,12 @@ export class TodoResolver {
   remove(@Args('todoId', { type: () => Int }) todoId: number): string {
     return this.todosService.remove(todoId);
   }
+
+  // Aggregations
+  @Query(() => Int, {
+    name: 'totalTodos',
+  })
+  totalTodos(): number {
+    return this.todosService.totalTodos;
+  }
 }
