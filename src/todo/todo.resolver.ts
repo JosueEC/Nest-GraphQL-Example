@@ -79,4 +79,11 @@ export class TodoResolver {
   completedTodos(): number {
     return this.todosService.completedTodos;
   }
+
+  @Query(() => Int, {
+    name: 'pendingTodos',
+  })
+  pendingTodos(): number {
+    return this.todosService.pendingTodos;
+  }
 }
