@@ -72,4 +72,11 @@ export class TodoResolver {
   totalTodos(): number {
     return this.todosService.totalTodos;
   }
+
+  @Query(() => Int, {
+    name: 'completedTodos',
+  })
+  completedTodos(): number {
+    return this.todosService.completedTodos;
+  }
 }
